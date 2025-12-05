@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>To do list</title>
+    <title>To-Do List</title>
+    <link rel="icon" type="image/svg" sizes="32x32" href="./assets/Logo.svg" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <form>
-      <h1>Mi lista de tareas</h1>
-      <label for="tarea">Tarea:</label>
-      <input type="text" id="tarea" />
-      <button>Agregar tarea</button>
-      <ol class="list"></ol>
-    </form>
+    <header>
+      <section class="logotipo" id="home">
+        <img src="./assets/Logo.svg" alt="logo" />
+        <p>Angela Jasso</p>
+      </section>
+      <section class="toggle">
+        <button class="theme-btn" id="theme-btn">🌙</button>
+      </section>
+    </header>
+    <main>
+      <h1>Lista de tareas</h1>
+      <form class="new-task" id="form">
+        <input
+          type="text"
+          id="input"
+          name="task"
+          placeholder="Escribe una tarea"
+          autocomplete="off"
+        /><button class="add" id="addTask" type="submit">✚ Agregar</button>
+      </form>
+      <section class="list-taks">
+        <ul id="list"></ul>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="./script.js"></script>
   </body>
-  <script src="/script.js"></script>
 </html>

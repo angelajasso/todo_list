@@ -1,66 +1,136 @@
-/*Reset styles*/
+@import url("./tokens.css");
+
+/* General Styles*/
 *,
 *::after,
 *::before {
   box-sizing: border-box;
-}
-
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
-
-  --h: 212;
-  --s: 25%;
-  --l: 95%;
-  --bg-color: hsl(var(--h), var(--s), var(--l));
-  --border-color: hsl(var(--h), 72%, 25%);
-
-  background-color: var(--bg-color);
-  color: var(--h), 72%, 15%;
+  scroll-behavior: smooth;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-form {
-  --l: 65%;
-  margin: 1rem auto;
-  width: 50rem;
-  padding: 1rem;
-  border-radius: 2rem;
-  border: 2px solid var(--border-color);
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-family-base);
+}
+
+header {
+  display: flex;
+  background: var(--gradient);
+  padding: var(--space-sm) var(--space-lg);
+  justify-content: space-between;
+}
+
+.logotipo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  color: var(--text-muted);
+  font-size: var(--font-size-lg);
+}
+
+.toggle {
+  align-content: center;
+}
+
+.theme-btn {
+  font-size: var(--font-size-lg);
+  border-radius: 50%;
+  padding: 0.3rem;
+  border: 5px var(--text-muted) solid;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
-  margin: 1rem;
+  font-size: var(--font-size-xxlg);
+  margin: var(--space-lg) 0;
+}
+
+form {
   text-align: center;
-  border: none;
-  --l: 65%;
+  margin: var(--space-lg);
 }
 
-label {
-  display: inline-block;
-  width: 10rem;
-  text-align: right;
-  --l: 65%;
-  font-size: 1.5rem;
+#input {
+  padding: var(--space-xs);
+  font-size: var(--font-size-lg);
+  border-radius: var(--space-sm);
 }
 
-input {
-  width: 25rem;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  border: 2px solid var(--border-color);
+.add {
+  margin: var(--space-xs);
+  padding: var(--space-xs);
+  font-size: var(--font-size-lg);
+  border-radius: var(--space-sm);
+  background-color: var(--surface);
+  border: 3px solid var(--brand);
+  cursor: pointer;
 }
 
-input:focus {
-  --h: 255;
+.add:hover {
+  background-color: var(--brand-hover);
+  color: var(--text-muted);
+  border: 3px solid var(--brand-hover);
 }
 
-button {
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  --s: 72%;
-  --l: 25%;
-  border: 2px solid var(--border-color);
-  color: white;
+.list-taks {
+  margin: var(--space-lg);
+  font-size: var(--font-size-lg);
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  border: 3px solid var(--brand);
+  border-radius: var(--space-sm);
+  margin: var(--space-xs);
+  padding: var(--space-xs);
+  background-color: var(--surface);
+  color: var(--text-black);
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li input {
+  margin: 0 var(--space-xs);
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+}
+
+li button {
+  padding: var(--space-xs);
+  font-size: var(--font-size-base);
+  border-radius: var(--space-sm);
+  background-color: var(--surface);
+  border: 3px solid var(--brand);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: var(--brand-hover);
+  color: var(--text-muted);
+  border: 3px solid var(--brand-hover);
+}
+
+.completada {
+  text-decoration: line-through;
+  color: var(--brand-hover);
 }
